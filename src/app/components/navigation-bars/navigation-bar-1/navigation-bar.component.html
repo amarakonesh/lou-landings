@@ -1,0 +1,34 @@
+<header class="navbar navbar-expand-lg fixed-top" [attr.data-bs-theme]="mode">
+  <div class="container">
+    
+    <!-- Logo -->
+    <component-logo-box [className]="'pe-sm-3'"></component-logo-box>
+
+    <!-- Switcher dark/light mode -->
+    <app-theme-switcher
+      class="form-check form-switch mode-switch order-lg-2 me-3 me-lg-4 ms-auto">
+    </app-theme-switcher>
+
+    <!-- Bouton -->
+    <a
+      class="btn btn-primary btn-sm fs-sm order-lg-3 d-none d-sm-inline-flex"
+      [href]="'https://google.com'"
+      target="_blank"
+      rel="noopener noreferrer">
+      Télécharger l'App
+    </a>
+
+    <!-- Bouton menu mobile -->
+    <vertical-menu-button></vertical-menu-button>
+
+    <!-- Menu principal -->
+    <nav
+      class="collapse navbar-collapse"
+      #collapse="ngbCollapse"
+      [(ngbCollapse)]="isMenuCollapsed"
+      id="navbarNav">
+      <horizontal-app-menu></horizontal-app-menu>
+    </nav>
+  </div>
+</header>
+
